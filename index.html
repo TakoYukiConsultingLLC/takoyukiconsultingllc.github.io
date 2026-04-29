@@ -8,23 +8,21 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     background: #f5f7fa;
     color: #1a1a1a;
 }
 
 header {
     background: #0b1f3a;
-    color: white;
-    padding: 20px 50px;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header h1 {
-    margin: 0;
-    color: gold;
+header img {
+    height: 50px;
 }
 
 nav a {
@@ -35,28 +33,32 @@ nav a {
 }
 
 .hero {
-    background: linear-gradient(rgba(11,31,58,0.8), rgba(11,31,58,0.8)),
+    background: linear-gradient(rgba(11,31,58,0.85), rgba(11,31,58,0.85)),
     url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab');
     background-size: cover;
     color: white;
     text-align: center;
-    padding: 100px 20px;
+    padding: 120px 20px;
 }
 
-.hero h2 {
-    font-size: 40px;
-    margin-bottom: 10px;
+.hero h1 {
+    font-size: 42px;
+}
+
+.btn {
+    background: gold;
+    color: #0b1f3a;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .section {
-    padding: 60px 50px;
+    padding: 60px 40px;
 }
 
-.section h2 {
-    color: #0b1f3a;
-}
-
-.services {
+.services, .results, .testimonials {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
@@ -66,7 +68,26 @@ nav a {
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.ceo {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.ceo img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.result-box {
+    background: white;
+    padding: 15px;
+    border-left: 5px solid green;
+    border-radius: 8px;
 }
 
 footer {
@@ -75,86 +96,115 @@ footer {
     text-align: center;
     padding: 30px;
 }
-
-.btn {
-    background: gold;
-    color: #0b1f3a;
-    padding: 12px 20px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-}
 </style>
 </head>
 
 <body>
 
 <header>
-    <h1>TakoYuki Consulting LLC</h1>
+    <img src="TAKO YUKI OFFICIAL LOGO(2).png">
     <nav>
         <a href="#about">About</a>
         <a href="#services">Services</a>
+        <a href="#results">Results</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h2>CREDIT REPAIR OUTSOURCING EXPERTS</h2>
-    <p>Factual Disputes • Metro 2 Compliance • Credit Sweeps</p>
+    <h1>CREDIT REPAIR OUTSOURCING EXPERTS</h1>
+    <p>We Dispute. We Correct. We Deliver Results.</p>
     <br>
     <a class="btn" href="#contact">Get Started</a>
 </section>
 
 <section class="section" id="about">
-    <h2>About Us</h2>
-    <p>
-        TakoYuki Consulting LLC is a professional credit repair outsourcing agency
-        specializing in factual disputes, Metro 2 compliance, and advanced credit strategies.
-        We help credit repair companies scale by handling backend operations with precision and compliance.
-    </p>
+    <h2>About TakoYuki Consulting LLC</h2>
+
+    <div class="ceo">
+        <img src="Pic2.png">
+
+        <p>
+        TakoYuki Consulting LLC was established on December 10, 2025, with a mission to provide high-quality, 
+        compliant, and results-driven credit repair outsourcing solutions.
+
+        Led by industry expert Erwin Lina, who has over 10 years of hands-on experience in credit repair, 
+        our company has successfully handled thousands of disputes including collections, charge-offs, 
+        late payments, repossessions, and banking records.
+
+        I personally manage and oversee every dispute process—from analysis to execution—ensuring that every 
+        case follows factual-based strategies and Metro 2 compliance standards.
+
+        Our goal is simple: deliver real, measurable results while helping credit repair businesses scale 
+        without worrying about backend operations.
+
+        If you're looking for a reliable partner who understands the system and delivers consistent results—
+        you are in the right place.
+        </p>
+    </div>
 </section>
 
 <section class="section" id="services">
     <h2>Our Services</h2>
+
     <div class="services">
 
-        <div class="card">
-            <h3>Factual Disputes</h3>
-            <p>Accurate and compliant dispute processing based on credit reporting data.</p>
-        </div>
+        <div class="card"><h3>Factual Disputes</h3><p>Accurate and compliant dispute processing.</p></div>
+        <div class="card"><h3>Credit Sweeps</h3><p>Advanced removal strategies.</p></div>
+        <div class="card"><h3>Metro 2 Compliance</h3><p>Identify reporting violations.</p></div>
+        <div class="card"><h3>ChexSystems</h3><p>Remove banking negatives.</p></div>
+        <div class="card"><h3>Early Warning Services</h3><p>Fix inaccurate records.</p></div>
+        <div class="card"><h3>BPO Services</h3><p>White-label backend support.</p></div>
 
-        <div class="card">
-            <h3>Credit Sweeps</h3>
-            <p>Advanced file restructuring and removal of outdated or unverifiable items.</p>
-        </div>
+    </div>
+</section>
 
-        <div class="card">
-            <h3>Metro 2 Compliance</h3>
-            <p>Identify violations and ensure accurate reporting standards.</p>
-        </div>
+<section class="section" id="results">
+    <h2>Proven Results</h2>
 
-        <div class="card">
-            <h3>ChexSystems Disputes</h3>
-            <p>Remove negative banking records and restore account eligibility.</p>
-        </div>
+    <div class="results">
 
-        <div class="card">
-            <h3>Early Warning Services</h3>
-            <p>Correct inaccurate banking history affecting approvals.</p>
-        </div>
+        <div class="result-box">+179 Score Increase (Equifax)</div>
+        <div class="result-box">+176 Score Increase (Experian)</div>
+        <div class="result-box">+171 Score Increase (TransUnion)</div>
+        <div class="result-box">+150 Score Increase</div>
+        <div class="result-box">+132 Score Increase</div>
+        <div class="result-box">+120 Score Increase</div>
+        <div class="result-box">+110 Score Increase</div>
+        <div class="result-box">+98 Score Increase</div>
+        <div class="result-box">+87 Score Increase</div>
+        <div class="result-box">+75 Score Increase</div>
 
-        <div class="card">
-            <h3>BPO for Credit Repair Companies</h3>
-            <p>White-label backend processing and scalable solutions.</p>
-        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Client Testimonials</h2>
+
+    <div class="testimonials">
+
+        <div class="card">“Amazing results! My score increased over 150 points.”</div>
+        <div class="card">“Very professional and fast processing.”</div>
+        <div class="card">“Best credit repair team I’ve worked with.”</div>
+        <div class="card">“Highly recommended for outsourcing.”</div>
 
     </div>
 </section>
 
 <section class="section" id="contact">
     <h2>Contact Us</h2>
+
     <p>Email: yukitakolina@gmail.com</p>
     <p>WhatsApp: +63 920 243 5746</p>
+
+    <br>
+
+    <form action="https://formsubmit.co/yukitakolina@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required><br><br>
+        <input type="email" name="email" placeholder="Your Email" required><br><br>
+        <textarea name="message" placeholder="Message"></textarea><br><br>
+        <button class="btn" type="submit">Send Message</button>
+    </form>
 </section>
 
 <footer>
