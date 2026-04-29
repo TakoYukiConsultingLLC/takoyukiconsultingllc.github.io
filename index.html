@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TakoYuki Consulting LLC</title>
 
+<!-- Professional Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
 <style>
 * {
     margin: 0;
@@ -12,292 +15,453 @@
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5f7fa;
-    color: #1a1a1a;
-    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+    color: #2c3e50;
+    line-height: 1.8;
+    overflow-x: hidden;
 }
 
 header {
-    background: #0b1f3a;
-    padding: 15px 40px;
+    background: linear-gradient(135deg, #0b1f3a 0%, #1a3a52 100%);
+    padding: 20px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-header img {
-    height: 60px;
-    width: auto;
-}
-
-header h1 {
-    color: gold;
-    font-size: 20px;
-    margin-left: 15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .header-content {
     display: flex;
     align-items: center;
+    gap: 15px;
+}
+
+header img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(255,215,0,0.3));
+}
+
+header h1 {
+    color: #ffd700;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    gap: 0;
 }
 
 nav a {
     color: white;
-    margin-left: 25px;
+    padding: 10px 20px;
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 nav a:hover {
-    color: gold;
+    color: #ffd700;
+    background: rgba(255,215,0,0.1);
+    border-radius: 5px;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #ffd700;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 80%;
 }
 
 .hero {
-    background: linear-gradient(rgba(11,31,58,0.85), rgba(11,31,58,0.85)),
-    url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab');
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(135deg, rgba(11,31,58,0.9) 0%, rgba(26,58,82,0.9) 100%),
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab') center/cover no-repeat;
     color: white;
     text-align: center;
-    padding: 120px 20px;
+    padding: 140px 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 800;
     margin-bottom: 15px;
-    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    letter-spacing: 2px;
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 30px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
 }
 
 .btn {
-    background: gold;
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
     color: #0b1f3a;
-    padding: 14px 30px;
-    border-radius: 5px;
+    padding: 16px 40px;
+    border-radius: 50px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
     display: inline-block;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease;
     cursor: pointer;
     border: none;
     font-size: 16px;
+    box-shadow: 0 8px 20px rgba(255,215,0,0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 20px rgba(255,215,0,0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255,215,0,0.5);
+}
+
+.btn:active {
+    transform: translateY(-1px);
 }
 
 .section {
-    padding: 80px 40px;
+    padding: 100px 50px;
     background: white;
-    margin: 20px auto;
+    margin: 30px auto;
     max-width: 1200px;
-    border-radius: 10px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
 }
 
 .section h2 {
-    font-size: 36px;
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 800;
     color: #0b1f3a;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     text-align: center;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #ffd700, transparent);
+    border-radius: 2px;
 }
 
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
     align-items: center;
 }
 
-.about-content img {
+.about-image {
+    position: relative;
+}
+
+.about-image img {
     width: 100%;
-    max-width: 350px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    max-width: 400px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(11,31,58,0.2);
+    border: 5px solid #ffd700;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.03);
 }
 
 .about-text h3 {
-    color: gold;
-    font-size: 20px;
-    margin-bottom: 15px;
+    color: #ffd700;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 .about-text p {
     color: #555;
-    margin-bottom: 15px;
-    font-size: 15px;
-    line-height: 1.8;
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 1.9;
+    font-weight: 400;
+}
+
+.about-text strong {
+    color: #0b1f3a;
+    font-weight: 700;
 }
 
 .services, .results, .testimonials {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 .card {
-    background: #f9f9f9;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border-top: 4px solid gold;
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border-left: 5px solid #ffd700;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+    border-radius: 50%;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transform: translateY(-15px);
+    box-shadow: 0 20px 45px rgba(11,31,58,0.15);
+    border-left-color: #0b1f3a;
 }
 
 .card h3 {
     color: #0b1f3a;
-    margin-bottom: 12px;
-    font-size: 18px;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: 700;
 }
 
 .card p {
     color: #666;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
 }
 
 .testimonials .card {
-    border-left: 4px solid gold;
-    border-top: none;
+    border-left: none;
+    border-top: 4px solid #ffd700;
     font-style: italic;
     color: #555;
-    padding: 25px;
+    padding: 35px;
+    background: linear-gradient(135deg, #fffbf0 0%, #fff8e7 100%);
+}
+
+.testimonials .card::before {
+    content: '"';
+    font-size: 60px;
+    color: #ffd700;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    opacity: 0.3;
 }
 
 .result-box {
-    background: #f0f8ff;
-    padding: 25px;
-    border-left: 5px solid gold;
-    border-radius: 8px;
+    background: linear-gradient(135deg, #e8f4ff 0%, #f0f9ff 100%);
+    padding: 35px 25px;
+    border-left: 5px solid #ffd700;
+    border-radius: 12px;
     text-align: center;
-    font-weight: bold;
+    font-weight: 700;
     color: #0b1f3a;
-    font-size: 16px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    font-size: 18px;
+    box-shadow: 0 8px 20px rgba(11,31,58,0.08);
+    transition: all 0.3s ease;
+    font-family: 'Playfair Display', serif;
 }
 
 .result-box:hover {
-    background: #e6f2ff;
-    transform: scale(1.05);
+    background: linear-gradient(135deg, #d0e8ff 0%, #e0f2ff 100%);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(11,31,58,0.15);
 }
 
 .contact-form {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 30px;
-    background: #f9f9f9;
-    border-radius: 12px;
-    border: 2px solid gold;
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 50px;
+    background: linear-gradient(135deg, #f8fbff 0%, #f0f6ff 100%);
+    border-radius: 16px;
+    border: 3px solid #ffd700;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 14px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    transition: all 0.3s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: gold;
-    box-shadow: 0 0 8px rgba(255,215,0,0.3);
+    border-color: #ffd700;
+    box-shadow: 0 0 15px rgba(255,215,0,0.2);
+    background: white;
 }
 
 .contact-form textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 140px;
 }
 
 .contact-info {
     text-align: center;
-    margin-bottom: 30px;
-    font-size: 16px;
+    margin-bottom: 40px;
+    font-size: 17px;
 }
 
 .contact-info p {
-    margin: 10px 0;
+    margin: 15px 0;
+    font-weight: 500;
 }
 
 .contact-info a {
-    color: gold;
+    color: #ffd700;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
+    transition: all 0.3s ease;
 }
 
 .contact-info a:hover {
     text-decoration: underline;
-}
-
-footer {
-    background: #0b1f3a;
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-    margin-top: 40px;
-    border-top: 3px solid gold;
-}
-
-footer p {
-    margin-bottom: 10px;
-}
-
-footer strong {
-    color: gold;
+    color: #0b1f3a;
 }
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-    padding: 30px;
-    background: #f0f8ff;
-    border-radius: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+    padding: 40px;
+    background: linear-gradient(135deg, #e8f4ff 0%, #f0f9ff 100%);
+    border-radius: 16px;
+    border: 2px solid #ffd700;
 }
 
 .stat {
     text-align: center;
+    padding: 20px;
 }
 
 .stat-number {
-    font-size: 32px;
-    color: gold;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #ffd700;
+    font-weight: 800;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .stat-label {
     color: #0b1f3a;
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+footer {
+    background: linear-gradient(135deg, #0b1f3a 0%, #1a3a52 100%);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 40px;
+    border-top: 5px solid #ffd700;
+}
+
+footer p {
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+footer strong {
+    color: #ffd700;
+    font-weight: 700;
 }
 
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
+        padding: 15px 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
 
     nav a {
-        margin-left: 15px;
+        padding: 8px 15px;
+        font-size: 13px;
     }
 
     .about-content {
@@ -306,15 +470,24 @@ footer strong {
     }
 
     .hero h1 {
-        font-size: 32px;
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
     }
 
     .section {
-        padding: 40px 20px;
+        padding: 50px 25px;
+        margin: 20px 10px;
     }
 
     .section h2 {
-        font-size: 28px;
+        font-size: 32px;
+    }
+
+    .contact-form {
+        padding: 30px 20px;
     }
 }
 </style>
@@ -324,8 +497,8 @@ footer strong {
 
 <header>
     <div class="header-content">
-        <img src="TAKO YUKI OFFICIAL LOGO(2).png" alt="TakoYuki Logo">
-        <h1>TakoYuki Consulting LLC</h1>
+        <img src="TAKO YUKI OFFICIAL LOGO(2).png" alt="TakoYuki Logo" loading="lazy">
+        <h1>TakoYuki Consulting</h1>
     </div>
     <nav>
         <a href="#about">About</a>
@@ -336,34 +509,37 @@ footer strong {
 </header>
 
 <section class="hero">
-    <h1>CREDIT REPAIR OUTSOURCING EXPERTS</h1>
-    <p>We Dispute. We Correct. We Deliver Results.</p>
-    <br>
-    <a class="btn" href="#contact">Get Started</a>
+    <div class="hero-content">
+        <h1>CREDIT REPAIR OUTSOURCING EXPERTS</h1>
+        <p>We Dispute. We Correct. We Deliver Results.</p>
+        <a class="btn" href="#contact">Get Started</a>
+    </div>
 </section>
 
 <section class="section" id="about">
     <h2>About TakoYuki Consulting LLC</h2>
 
     <div class="about-content">
-        <img src="Pic2.png" alt="Erwin Lina - CEO">
+        <div class="about-image">
+            <img src="Pic2.png" alt="Erwin Lina - CEO & Founder" loading="lazy">
+        </div>
 
         <div class="about-text">
             <h3>Led by Industry Expert Erwin Lina</h3>
             
             <p>
-                TakoYuki Consulting LLC was established on December 10, 2025, with a mission to provide high-quality, 
+                TakoYuki Consulting LLC was established on <strong>December 10, 2025</strong>, with a mission to provide high-quality, 
                 compliant, and results-driven credit repair outsourcing solutions.
             </p>
 
             <p>
-                With over 10 years of hands-on experience in credit repair, our founder has successfully handled thousands 
-                of disputes including collections, charge-offs, late payments, repossessions, and banking records.
+                With <strong>over 10 years of hands-on experience</strong> in credit repair, our founder has successfully handled 
+                <strong>thousands of disputes</strong> including collections, charge-offs, late payments, repossessions, and banking records.
             </p>
 
             <p>
                 <strong>Every dispute is personally managed and overseen</strong>—from analysis to execution—ensuring that 
-                every case follows factual-based strategies and Metro 2 compliance standards.
+                every case follows <strong>factual-based strategies</strong> and <strong>Metro 2 compliance standards</strong>.
             </p>
 
             <p>
@@ -461,17 +637,17 @@ footer strong {
     <h2>Contact Us</h2>
 
     <div class="contact-info">
-        <p><strong>Email:</strong> <a href="mailto:yukitakolina@gmail.com">yukitakolina@gmail.com</a></p>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/639202435746">+63 920 243 5746</a></p>
-        <p><strong>Available:</strong> Globally • 24/7 Support</p>
+        <p><strong>📧 Email:</strong> <a href="mailto:yukitakolina@gmail.com">yukitakolina@gmail.com</a></p>
+        <p><strong>💬 WhatsApp:</strong> <a href="https://wa.me/639202435746">+63 920 243 5746</a></p>
+        <p><strong>🌍 Available:</strong> Globally • 24/7 Support</p>
     </div>
 
     <div class="contact-form">
         <form action="https://formsubmit.co/yukitakolina@gmail.com" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="name" placeholder="Your Full Name" required>
+            <input type="email" name="email" placeholder="Your Email Address" required>
             <input type="text" name="subject" placeholder="Subject" required>
-            <textarea name="message" placeholder="Tell us about your needs..."></textarea>
+            <textarea name="message" placeholder="Tell us about your needs and how we can help..."></textarea>
             <button class="btn" type="submit">Send Message</button>
         </form>
     </div>
