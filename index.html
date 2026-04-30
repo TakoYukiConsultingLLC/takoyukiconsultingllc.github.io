@@ -293,10 +293,35 @@ nav a:hover::after {
 }
 
 /* hover animation */
-.card:hover {
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+:root {
+    --primary: #0b1f3a;
+    --secondary: #1a3a52;
+    --gold: #ffd700;
 }
+
+/* GOLD TEXT */
+.gold {
+    color: var(--gold);
+}
+
+/* SECTION DARK PREMIUM */
+.section-dark {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+}
+
+/* NICE DIVIDER */
+.divider {
+    width: 80px;
+    height: 4px;
+    background: var(--gold);
+    margin: 20px auto;
+    border-radius: 2px;
+}
+
+/* BETTER BUTTON */
+.btn {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
 }
 
 .card::before {
@@ -587,7 +612,11 @@ footer strong {
 
 <section class="hero">
     <div class="hero-content">
-        <h1>TAKOYUKI CONSULTING LLC</h1>
+        <h1 class="gold">TAKOYUKI CONSULTING LLC</h1>
+<p>
+Professional Credit Repair Outsourcing backed by 10+ years of experience, expert disputers,
+and proven high-impact results.
+</p>
 <p>
 Elite Credit Repair Outsourcing Solutions Powered by 10+ Years of Experience, 
 Expert Disputers, and Proven High-Impact Results.
@@ -723,7 +752,56 @@ Expert Disputers, and Proven High-Impact Results.
     </div>
 </section>
 
-<section class="section" id="results">
+<section class="section section-dark">
+    <h2 class="gold">How Credit Repair Works</h2>
+    <div class="divider"></div>
+
+    <div style="max-width:900px;margin:auto;text-align:center;">
+
+        <p>
+        Credit repair is the process of identifying inaccurate, outdated, or unverifiable information 
+        on your credit report and disputing it properly.
+        </p>
+
+        <p>
+        At TakoYuki Consulting LLC, we analyze your credit file, identify reporting violations, and apply 
+        factual dispute strategies aligned with Metro 2 compliance standards.
+        </p>
+
+        <p>
+        As these negative items are corrected or removed, your credit score improves—giving you access to 
+        better financial opportunities such as loans, approvals, and lower interest rates.
+        </p>
+
+    </div>
+</section><section class="section">
+    <h2>What This Means For You</h2>
+    <div class="divider"></div>
+
+    <div class="services">
+
+        <div class="card">
+            <h3>💳 Better Approvals</h3>
+            <p>Higher credit scores increase your chances of approval.</p>
+        </div>
+
+        <div class="card">
+            <h3>🏡 Home & Car Access</h3>
+            <p>Unlock opportunities for mortgages and auto loans.</p>
+        </div>
+
+        <div class="card">
+            <h3>📉 Lower Interest Rates</h3>
+            <p>Save money by qualifying for better loan terms.</p>
+        </div>
+
+        <div class="card">
+            <h3>💼 Financial Freedom</h3>
+            <p>Take control of your financial future with confidence.</p>
+        </div>
+
+    </div>
+</section>
     <h2>Proven Results</h2>
 
     <div class="results">
@@ -770,7 +848,25 @@ Expert Disputers, and Proven High-Impact Results.
     </div>
 </section>
 
-<section class="section" id="contact">
+<section class="section section-dark">
+    <h2 class="gold">Ready to Fix Your Credit?</h2>
+    <div class="divider"></div>
+
+    <div style="text-align:center;max-width:700px;margin:auto;">
+
+        <p>
+        Stop letting inaccurate negative items hold you back. Start your journey toward better credit,
+        better approvals, and financial freedom today.
+        </p>
+
+        <br>
+
+        <a href="https://wa.me/639202435746" class="btn">
+        Start Now via WhatsApp
+        </a>
+
+    </div>
+</section>
     <h2>Contact Us</h2>
 
     <div class="contact-info">
