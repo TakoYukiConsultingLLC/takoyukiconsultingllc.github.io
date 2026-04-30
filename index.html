@@ -5,270 +5,812 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TakoYuki Consulting LLC</title>
 
+<!-- Professional Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#f5f7fa,#e8eef5);
-color:#2c3e50;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* HEADER */
-header{
-background:linear-gradient(135deg,#0b1f3a,#1a3a52);
-padding:20px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-header img{height:60px;}
-nav a{
-color:white;
-margin-left:20px;
-text-decoration:none;
-font-weight:600;
-}
-nav a:hover{color:#ffd700;}
-
-/* HERO */
-.hero{
-position:relative;
-background:linear-gradient(rgba(11,31,58,0.92),rgba(26,58,82,0.92)),
-url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab') center/cover;
-color:white;
-text-align:center;
-padding:140px 20px;
-}
-.hero::after{
-content:"";
-position:absolute;
-top:50%;left:50%;
-width:600px;height:600px;
-background:url('tako-yuki-logo.png') no-repeat center;
-background-size:contain;
-opacity:0.05;
-transform:translate(-50%,-50%);
-}
-.hero-content{position:relative;z-index:2;}
-.hero h1{
-font-family:'Playfair Display',serif;
-font-size:50px;
-color:#ffd700;
-}
-.btn{
-background:#ffd700;
-color:#0b1f3a;
-padding:14px 30px;
-border-radius:30px;
-font-weight:bold;
-text-decoration:none;
-display:inline-block;
-margin-top:20px;
+html, body {
+    width: 100%;
+    height: 100%;
 }
 
-/* SECTIONS */
-.section{
-padding:80px 40px;
-max-width:1100px;
-margin:auto;
-background:white;
-margin-top:30px;
-border-radius:15px;
-}
-.section-dark{
-background:linear-gradient(135deg,#0b1f3a,#1a3a52);
-color:white;
-}
-.section h2{
-text-align:center;
-margin-bottom:30px;
-font-family:'Playfair Display',serif;
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+    color: #2c3e50;
+    line-height: 1.8;
+    overflow-x: hidden;
 }
 
-/* GRID */
-.services,.results{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+header {
+    background: linear-gradient(135deg, #0b1f3a 0%, #1a3a52 100%);
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/* CARD */
-.card{
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-border-top:4px solid #ffd700;
-transition:.3s;
-}
-.card:hover{
-transform:translateY(-8px);
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-/* ABOUT */
-.about{
-display:grid;
-grid-template-columns:1fr 1.2fr;
-gap:40px;
-align-items:center;
-}
-.about img{
-width:100%;
-border-radius:15px;
-border:4px solid #ffd700;
+header img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(255,215,0,0.3));
 }
 
-/* RESULTS */
-.result-box{
-background:#eef6ff;
-padding:20px;
-border-left:4px solid #ffd700;
-text-align:center;
-font-weight:bold;
+header h1 {
+    color: #ffd700;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-/* CONTACT */
-.contact{
-text-align:center;
-}
-input,textarea{
-width:100%;
-padding:12px;
-margin:10px 0;
-border-radius:8px;
-border:1px solid #ccc;
+nav {
+    display: flex;
+    gap: 0;
 }
 
-/* FOOTER */
-footer{
-background:#0b1f3a;
-color:white;
-text-align:center;
-padding:30px;
-margin-top:30px;
+nav a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-.about{grid-template-columns:1fr;}
-.hero h1{font-size:32px;}
+nav a:hover {
+    color: #ffd700;
+    background: rgba(255,215,0,0.1);
+    border-radius: 5px;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #ffd700;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 80%;
+}
+
+.hero {
+    position: relative;
+    background: linear-gradient(135deg, rgba(11,31,58,0.92), rgba(26,58,82,0.92)),
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 150px 30px;
+    overflow: hidden;
+}
+
+/* LOGO WATERMARK */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 700px;
+    background: url('tako-yuki-logo.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.06;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.btn {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #0b1f3a;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    box-shadow: 0 8px 20px rgba(255,215,0,0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255,215,0,0.5);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.section {
+    padding: 100px 50px;
+    background: white;
+    margin: 30px auto;
+    max-width: 1200px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: #0b1f3a;
+    margin-bottom: 60px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #ffd700, transparent);
+    border-radius: 2px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(11,31,58,0.2);
+    border: 5px solid #ffd700;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.03);
+}
+
+.about-text h3 {
+    color: #ffd700;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #555;
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 1.9;
+    font-weight: 400;
+}
+
+.about-text strong {
+    color: #0b1f3a;
+    font-weight: 700;
+}
+
+.services, .results, .testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transition: all 0.35s ease;
+    border-top: 4px solid #ffd700;
+    position: relative;
+    overflow: hidden;
+}
+
+/* subtle glow effect */
+.card::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(255,215,0,0.15), transparent 70%);
+    border-radius: 50%;
+}
+
+/* hover animation */
+.card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 45px rgba(11,31,58,0.15);
+    border-left-color: #0b1f3a;
+}
+
+.card h3 {
+    color: #0b1f3a;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.card p {
+    color: #666;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.testimonials .card {
+    border-left: none;
+    border-top: 4px solid #ffd700;
+    font-style: italic;
+    color: #555;
+    padding: 35px;
+    background: linear-gradient(135deg, #fffbf0 0%, #fff8e7 100%);
+}
+
+.testimonials .card::before {
+    content: '"';
+    font-size: 60px;
+    color: #ffd700;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    opacity: 0.3;
+}
+
+.result-box {
+    background: linear-gradient(135deg, #e8f4ff 0%, #f0f9ff 100%);
+    padding: 35px 25px;
+    border-left: 5px solid #ffd700;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 700;
+    color: #0b1f3a;
+    font-size: 18px;
+    box-shadow: 0 8px 20px rgba(11,31,58,0.08);
+    transition: all 0.3s ease;
+    font-family: 'Playfair Display', serif;
+}
+
+.result-box:hover {
+    background: linear-gradient(135deg, #d0e8ff 0%, #e0f2ff 100%);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(11,31,58,0.15);
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 50px;
+    background: linear-gradient(135deg, #f8fbff 0%, #f0f6ff 100%);
+    border-radius: 16px;
+    border: 3px solid #ffd700;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 15px rgba(255,215,0,0.2);
+    background: white;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 17px;
+}
+
+.contact-info p {
+    margin: 15px 0;
+    font-weight: 500;
+}
+
+.contact-info a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+    color: #0b1f3a;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+    padding: 40px;
+    background: linear-gradient(135deg, #e8f4ff 0%, #f0f9ff 100%);
+    border-radius: 16px;
+    border: 2px solid #ffd700;
+}
+
+.stat {
+    text-align: center;
+    padding: 20px;
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #ffd700;
+    font-weight: 800;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stat-label {
+    color: #0b1f3a;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+footer {
+    background: linear-gradient(135deg, #0b1f3a 0%, #1a3a52 100%);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 40px;
+    border-top: 5px solid #ffd700;
+}
+
+footer p {
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+footer strong {
+    color: #ffd700;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav a {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 50px 25px;
+        margin: 20px 10px;
+    }
+
+    .section h2 {
+        font-size: 32px;
+    }
+
+    .contact-form {
+        padding: 30px 20px;
+    }
 }
 </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakoYuki Consulting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #0b1f3a, #ffd700);
+            color: white;
+        }
+        header {
+            background-color: #0b1f3a;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0b1f3a;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-<img src="tako-yuki-logo.png">
-<nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#results">Results</a>
-<a href="#contact">Contact</a>
-</nav>
+    <div class="header-content">
+        <img src="tako-yuki-logo.png" alt="TakoYuki Logo" loading="lazy">
+        <h1>TakoYuki Consulting</h1>
+    </div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#results">Results</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
 <section class="hero">
-<div class="hero-content">
-<h1>TAKOYUKI CONSULTING LLC</h1>
-<p>Elite Credit Repair Outsourcing Solutions with 10+ Years Experience</p>
-
-<div style="margin-top:20px;font-size:14px;">
-✔ 10+ Years Experience &nbsp; ✔ Metro 2 Compliant &nbsp; ✔ 1000+ Disputes
+    <div class="hero-content">
+        <h1>TAKOYUKI CONSULTING LLC</h1>
+<p>
+Elite Credit Repair Outsourcing Solutions Powered by 10+ Years of Experience, 
+Expert Disputers, and Proven High-Impact Results.
+</p>
+        <p>We Dispute. We Correct. We Deliver Results.</p>
+        <div style="margin-top:30px; font-size:14px; opacity:0.9;">
+✔ 10+ Years Experience &nbsp;&nbsp; ✔ Metro 2 Compliant &nbsp;&nbsp; ✔ 1000+ Disputes Processed
 </div>
-
-<a class="btn" href="#contact">Start Your Credit Repair Today</a>
-</div>
+    </div>
 </section>
 
 <section class="section" id="about">
-<h2>About Us</h2>
-<div class="about">
-<img src="ceo.png">
-<div>
-<p><strong>Led by Erwin Lina</strong> with over 10 years of experience.</p>
-<p>We specialize in factual disputes, Metro 2 compliance, credit sweeps, ChexSystems and EWS disputes.</p>
-<p>We manage the entire process to deliver accurate and consistent results.</p>
-</div>
-</div>
+    <h2>About TakoYuki Consulting LLC</h2>
+
+    <div class="about-content">
+        <div class="about-image">
+            <img src="Pic2.png" alt="Erwin Lina - CEO & Founder" loading="lazy">
+        </div>
+
+        <div class="about-text">
+            <h3>Led by Industry Expert Erwin Lina</h3>
+            
+            <p>
+                TakoYuki Consulting LLC was established on <strong>December 10, 2023</strong>, with a mission to provide high-quality, 
+                compliant, and results-driven credit repair outsourcing solutions.
+            </p>
+
+            <p>
+                With <strong>over 10 years of hands-on experience</strong> in credit repair, our founder has successfully handled 
+                <strong>thousands of disputes</strong> including collections, charge-offs, late payments, repossessions, and banking records.
+            </p>
+
+            <p>
+                <strong>Every dispute is personally managed and overseen</strong>—from analysis to execution—ensuring that 
+                every case follows <strong>factual-based strategies</strong> and <strong>Metro 2 compliance standards</strong>.
+            </p>
+
+            <p>
+                Our goal is simple: <strong>deliver real, measurable results</strong> while helping credit repair businesses 
+                scale without worrying about backend operations.
+            </p>
+
+            <p>
+                If you're looking for a reliable partner who understands the system and delivers consistent results—
+                <strong>you are in the right place.</strong>
+            </p>
+        </div>
+    </div>
 </section>
 
 <section class="section">
-<h2>Why Choose Us</h2>
-<div class="services">
-<div class="card"><h3>Expert Disputers</h3><p>Highly trained professionals.</p></div>
-<div class="card"><h3>Knowledgeable Team</h3><p>Responsive support.</p></div>
-<div class="card"><h3>Proven Results</h3><p>Real measurable improvements.</p></div>
-<div class="card"><h3>Fully Managed</h3><p>We handle everything.</p></div>
-</div>
-</section>
+    <h2>Why Choose TakoYuki Consulting</h2>
 
-<section class="section" id="services">
-<h2>Our Services</h2>
-<div class="services">
-<div class="card">Factual Disputes</div>
-<div class="card">Credit Sweeps</div>
-<div class="card">Metro 2 Compliance</div>
-<div class="card">ChexSystems</div>
-<div class="card">Early Warning Services</div>
-<div class="card">BPO Outsourcing</div>
-</div>
-</section>
+    <div class="services">
 
-<section class="section-dark section">
-<h2>How Credit Repair Works</h2>
-<p style="text-align:center;max-width:700px;margin:auto;">
-We analyze your report, identify inaccurate items, dispute them, and improve your credit profile.
-</p>
-</section>
+        <div class="card">
+            <h3>✔ Expert Disputers</h3>
+            <p>
+            Our team consists of highly trained and experienced disputers who understand credit reporting systems, 
+            Metro 2 compliance, and factual dispute strategies at a deep level.
+            </p>
+        </div>
 
-<section class="section">
-<h2>Our Process</h2>
-<div class="services">
-<div class="card">1. Analysis</div>
-<div class="card">2. Strategy</div>
-<div class="card">3. Dispute</div>
-<div class="card">4. Results</div>
-</div>
+        <div class="card">
+            <h3>✔ Knowledgeable Support Team</h3>
+            <p>
+            We provide responsive and professional support, ensuring smooth communication, quick turnaround times, 
+            and consistent updates throughout the entire process.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>✔ 10+ Years Industry Experience</h3>
+            <p>
+            With over a decade of hands-on experience, we have successfully handled thousands of disputes across 
+            all major credit bureaus and banking reporting systems.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>✔ Fully Managed Dispute Process</h3>
+            <p>
+            Every dispute is carefully analyzed, prepared, and executed with precision. We handle everything from 
+            start to finish so you can focus on growing your business.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>✔ Proven Results & Performance</h3>
+            <p>
+            Our track record speaks for itself. We consistently deliver measurable improvements and high-impact results 
+            for our clients.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>✔ Scalable Outsourcing Solution</h3>
+            <p>
+            Whether you're just starting or scaling your credit repair business, we provide reliable backend support 
+            that grows with you.
+            </p>
+        </div>
+
+    </div>
+</section>
+    <h2>Our Services</h2>
+
+    <div class="services">
+        <div class="card">
+            <h3>📋 Factual Disputes</h3>
+            <p>Accurate and compliant dispute processing based on credit reporting data.</p>
+        </div>
+        <div class="card">
+            <h3>💫 Credit Sweeps</h3>
+            <p>Advanced removal strategies and file restructuring techniques.</p>
+        </div>
+        <div class="card">
+            <h3>🏛️ Metro 2 Compliance</h3>
+            <p>Identify reporting violations and ensure accurate standards.</p>
+        </div>
+        <div class="card">
+            <h3>🛡️ ChexSystems</h3>
+            <p>Remove banking negatives and restore account eligibility.</p>
+        </div>
+        <div class="card">
+            <h3>⚠️ Early Warning Services</h3>
+            <p>Fix inaccurate banking records affecting approvals.</p>
+        </div>
+        <div class="card">
+            <h3>⚙️ BPO Services</h3>
+            <p>White-label backend support and scalable solutions.</p>
+        </div>
+    </div>
 </section>
 
 <section class="section" id="results">
-<h2>Results</h2>
-<div class="results">
-<div class="result-box">+179 Score</div>
-<div class="result-box">+176 Score</div>
-<div class="result-box">+150 Score</div>
-<div class="result-box">+120 Score</div>
-</div>
+    <h2>Proven Results</h2>
+
+    <div class="results">
+        <div class="result-box">+179 Score Increase (Equifax)</div>
+        <div class="result-box">+176 Score Increase (Experian)</div>
+        <div class="result-box">+171 Score Increase (TransUnion)</div>
+        <div class="result-box">+150 Score Increase</div>
+        <div class="result-box">+132 Score Increase</div>
+        <div class="result-box">+120 Score Increase</div>
+        <div class="result-box">+110 Score Increase</div>
+        <div class="result-box">+98 Score Increase</div>
+        <div class="result-box">+87 Score Increase</div>
+        <div class="result-box">+75 Score Increase</div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat">
+            <div class="stat-number">37+</div>
+            <div class="stat-label">Disputes Deleted</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">1000+</div>
+            <div class="stat-label">Disputes Handled</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Compliance Rate</div>
+        </div>
+    </div>
 </section>
 
-<section class="section-dark section">
-<h2>Ready to Fix Your Credit?</h2>
-<p style="text-align:center;">Start your journey to financial freedom today.</p>
-<a href="https://wa.me/639202435746" class="btn">Chat on WhatsApp</a>
+<section class="section">
+    <h2>Client Testimonials</h2>
+
+    <div class="testimonials">
+        <div class="card">"Amazing results! My score increased over 150 points in just a few months."</div>
+        <div class="card">"Very professional and fast processing. Highly recommend!"</div>
+        <div class="card">"Best credit repair team I've worked with. They know what they're doing."</div>
+        <div class="card">"Highly recommended for outsourcing. TakoYuki delivers real results!"</div>
+    </div>
 </section>
 
 <section class="section" id="contact">
-<h2>Contact</h2>
-<div class="contact">
-<p>Email: yukitakolina@gmail.com</p>
-<p>WhatsApp: +63 920 243 5746</p>
+    <h2>Contact Us</h2>
 
-<form action="https://formsubmit.co/yukitakolina@gmail.com" method="POST">
-<input type="text" name="name" placeholder="Name" required>
-<input type="email" name="email" placeholder="Email" required>
-<textarea name="message" placeholder="Message"></textarea>
-<button class="btn">Send</button>
-</form>
+    <div class="contact-info">
+        <p><strong>📧 Email:</strong> <a href="mailto:yukitakolina@gmail.com">yukitakolina@gmail.com</a></p>
+        <p><strong>💬 WhatsApp:</strong> <a href="https://wa.me/639202435746">+63 920 243 5746</a></p>
+        <p><strong>🌍 Available:</strong> Globally • 24/7 Support</p>
+    </div>
 
-</div>
+    <div class="contact-form">
+        <form action="https://formsubmit.co/yukitakolina@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Your Full Name" required>
+            <input type="email" name="email" placeholder="Your Email Address" required>
+            <input type="text" name="subject" placeholder="Subject" required>
+            <textarea name="message" placeholder="Tell us about your needs and how we can help..."></textarea>
+            <button class="btn" type="submit">Send Message</button>
+        </form>
+    </div>
 </section>
 
 <footer>
-<p>© 2026 TakoYuki Consulting LLC</p>
+    <p>© 2026 TakoYuki Consulting LLC</p>
+    <p><strong>Strategic Credit Solutions. Measurable Results. Lasting Impact.</strong></p>
+    <p>We Dispute. We Correct. We Deliver Results.</p>
 </footer>
 
+    <header>
+        <h1>Welcome to TakoYuki Consulting</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <section>
+        <h2>Your Path to Excellence</h2>
+        <p>At TakoYuki Consulting, we provide expert guidance and strategic solutions to elevate your business.</p>
+    </section>
+    <footer>
+        <p>&copy; 2026 TakoYuki Consulting LLC. All rights reserved.</p>
+    </footer>
 </body>
 </html>
