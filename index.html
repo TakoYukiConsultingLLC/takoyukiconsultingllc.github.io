@@ -99,13 +99,28 @@ nav a:hover::after {
 }
 
 .hero {
-    background: linear-gradient(135deg, rgba(11,31,58,0.9) 0%, rgba(26,58,82,0.9) 100%),
+    position: relative;
+    background: linear-gradient(135deg, rgba(11,31,58,0.92), rgba(26,58,82,0.92)),
                 url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab') center/cover no-repeat;
     color: white;
     text-align: center;
-    padding: 140px 30px;
-    position: relative;
+    padding: 150px 30px;
     overflow: hidden;
+}
+
+/* LOGO WATERMARK */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 700px;
+    background: url('tako-yuki-logo.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.06;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
 .hero::before {
@@ -255,14 +270,33 @@ nav a:hover::after {
 }
 
 .card {
-    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-    border-left: 5px solid #ffd700;
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transition: all 0.35s ease;
+    border-top: 4px solid #ffd700;
     position: relative;
     overflow: hidden;
+}
+
+/* subtle glow effect */
+.card::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(255,215,0,0.15), transparent 70%);
+    border-radius: 50%;
+}
+
+/* hover animation */
+.card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
 }
 
 .card::before {
@@ -553,9 +587,15 @@ footer strong {
 
 <section class="hero">
     <div class="hero-content">
-        <h1>CREDIT REPAIR OUTSOURCING EXPERTS</h1>
+        <h1>TAKOYUKI CONSULTING LLC</h1>
+<p>
+Elite Credit Repair Outsourcing Solutions Powered by 10+ Years of Experience, 
+Expert Disputers, and Proven High-Impact Results.
+</p>
         <p>We Dispute. We Correct. We Deliver Results.</p>
-        <a class="btn" href="#contact">Get Started</a>
+        <div style="margin-top:30px; font-size:14px; opacity:0.9;">
+✔ 10+ Years Experience &nbsp;&nbsp; ✔ Metro 2 Compliant &nbsp;&nbsp; ✔ 1000+ Disputes Processed
+</div>
     </div>
 </section>
 
@@ -598,7 +638,61 @@ footer strong {
     </div>
 </section>
 
-<section class="section" id="services">
+<section class="section">
+    <h2>Why Choose TakoYuki Consulting</h2>
+
+    <div class="services">
+
+        <div class="card">
+            <h3>✔ Expert Disputers</h3>
+            <p>
+            Our team consists of highly trained and experienced disputers who understand credit reporting systems, 
+            Metro 2 compliance, and factual dispute strategies at a deep level.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>✔ Knowledgeable Support Team</h3>
+            <p>
+            We provide responsive and professional support, ensuring smooth communication, quick turnaround times, 
+            and consistent updates throughout the entire process.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>✔ 10+ Years Industry Experience</h3>
+            <p>
+            With over a decade of hands-on experience, we have successfully handled thousands of disputes across 
+            all major credit bureaus and banking reporting systems.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>✔ Fully Managed Dispute Process</h3>
+            <p>
+            Every dispute is carefully analyzed, prepared, and executed with precision. We handle everything from 
+            start to finish so you can focus on growing your business.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>✔ Proven Results & Performance</h3>
+            <p>
+            Our track record speaks for itself. We consistently deliver measurable improvements and high-impact results 
+            for our clients.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>✔ Scalable Outsourcing Solution</h3>
+            <p>
+            Whether you're just starting or scaling your credit repair business, we provide reliable backend support 
+            that grows with you.
+            </p>
+        </div>
+
+    </div>
+</section>
     <h2>Our Services</h2>
 
     <div class="services">
